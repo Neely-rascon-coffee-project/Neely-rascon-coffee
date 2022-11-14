@@ -178,7 +178,7 @@ body {
 #roast-selection {
     color: var(--clr-logo);
     background-color: var(--clr-search);
-    border: 1px solid white;
+    border: 2px solid white;
     padding-left: 0.5em;
     border-radius: 3em;
     margin-right: -0.75em;
