@@ -267,6 +267,7 @@ h3 {
 #input-submit {
     color: var(--clr-logo);
     background-color: var(--clr-search);
+    border: 2px solid black;
     border-radius: 3em;
     transform: translateX(-6em);
 }
