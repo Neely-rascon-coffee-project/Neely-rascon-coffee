@@ -59,7 +59,7 @@ body {
 
 .input-group-text-1 {
     background-color: var(--clr-search);
-    border: 2px solid white;
+    border: 1px solid white;
     border-radius: 3em;
     padding: 0 0.5em 0 0;
     margin-right: -1em;
@@ -88,7 +88,7 @@ body {
     width: 15em;
     background-color: rgb(43, 47, 51);
     color: white;
-    border: 2px solid white;
+    border: 1px solid white;
     padding: 0 0 0 1em;
 }
 
@@ -105,7 +105,6 @@ body {
     border: 1px solid white;
     height: auto;
     width: auto;
-    border: 2px solid white;
     border-radius: 3em;
     margin: 0;
     padding: 0 0.25em;
@@ -113,7 +112,7 @@ body {
 
 .search-button:hover {
     fill: black;
-    background-color: #666;
+    background-color: #555;
     transition: 0.3s ease-in-out;
 }
 
@@ -137,7 +136,7 @@ body {
     background-color: rgba(0 0 0 / 0.6);
     box-shadow: 0 0 1em rgba(0 0 0 / 1);
     text-shadow: 0 0 0.25em var(--clr-logo);
-    border-radius: 2em;
+    border-radius: 5em;
     margin-top: 5em;
 }
 
@@ -151,8 +150,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
     margin: 1em 0;
     padding: 3em 10em;
     user-select: none;
@@ -178,17 +177,39 @@ body {
 #roast-selection {
     color: var(--clr-logo);
     background-color: var(--clr-search);
-    border: 2px solid white;
+    border: 1px solid white;
     padding-left: 0.5em;
     border-radius: 3em;
     margin-right: -0.75em;
 }
 
+#roast-selection:hover {
+    background-color: #444;
+    transition: 0.2s ease-in-out;
+}
+
+
+select:focus,
+input:focus {
+    outline: none;
+}
+
 #searchBox {
     margin-right: -0.5em;
     margin-left: -0.25em;
-    border: 2px solid white;
     border-radius: 0px;
+}
+
+#roast-selection,
+#searchBox,
+#submit {
+    border: 2px solid white;
+    box-shadow: 0 0 5px var(--clr-logo);
+}
+
+#roast-selection,
+#submit {
+    cursor: pointer;
 }
 
 .container-add-a-coffee {
@@ -196,8 +217,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
     margin: 3em 0;
     padding: 3em 0;
 }
@@ -211,8 +232,9 @@ body {
 .coffee-inject {
     display: inline-flex;
     flex-direction: column;
-    width: 25%;
+    width: 30%;
     background-color: rgba(0 0 0 / 0.7);
+    box-shadow: 0 0 5px var(--clr-logo);
     border: 2px solid white;
     border-radius: 1em;
     padding: 1em;
@@ -225,9 +247,48 @@ body {
 
 .coffee-inject h2 {
     font-size: 1.25em;
-    border-top: 1px solid white;
+    border-top: 2px solid white;
     padding-top: 1em;
-    padding-right: 1em;
+    margin-bottom: 1em;
+}
+
+.view-button,
+.buy-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border: 1px solid white;
+    border-radius: 3em;
+    padding: 0.25em 0.5em;
+    margin: 0.25em 0;
+    user-select: none;
+}
+
+.coffee-inject button svg {
+    margin-right: .5em;
+}
+
+.view-button {
+    color: var(--clr-search);
+    background-color: var(--clr-logo);
+}
+
+.buy-button {
+    color: var(--clr-logo);
+    background-color: var(--clr-search);
+}
+
+.view-button:hover,
+.buy-button:hover {
+    filter: brightness(1.5);
+    transition: 0.2s ease-in-out;
+}
+
+.view-button:active,
+.buy-button:active {
+    filter: brightness(1);
+    transform: translateY(2px);
 }
 
 .container-h3 {
@@ -245,23 +306,41 @@ h3 {
     font-size: 1.25em;
 }
 
-#input-roast {
+
+#input-submit,
+#input-roast,
+#input-name {
     background-color: var(--clr-search);
     color: var(--clr-logo);
     border: 2px solid white;
     border-radius: 3em;
-    padding: 0 0 0 0.5em;
+    box-shadow: 0 0 5px var(--clr-logo);
     user-select: none;
+}
+
+#input-roast,
+#input-submit {
+    padding: 0.25em 0.5em;
+    cursor: pointer;
+}
+
+#input-roast {
+    padding: 0.5em;
 }
 
 #input-name {
     width: 20em;
-    background-color: var(--clr-search);
-    color: var(--clr-logo);
-    border-radius: 3em;
-    border: 2px solid white;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
     padding-left: 1em;
     margin-left: 6em;
+}
+
+input:-webkit-autofill:focus,
+input:-webkit-autofill:hover,
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px var(--clr-search) inset !important;
+    -webkit-text-fill-color: var(--clr-logo) !important;
 }
 
 #input-name::placeholder {
@@ -271,15 +350,16 @@ h3 {
 #input-submit {
     color: var(--clr-logo);
     background-color: var(--clr-search);
-    border: 2px solid white;
-    border-radius: 3em;
     transform: translateX(-6em);
 }
 
+#input-roast:hover,
 #input-submit:hover {
     filter: brightness(1.5);
+    transition: 0.2s ease-in-out;
 }
 
+#input-roast:active,
 #input-submit:active {
     filter: brightness(0.75);
 }
