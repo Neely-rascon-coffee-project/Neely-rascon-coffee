@@ -45,7 +45,6 @@ body {
 .container-coffee-svg-1 {
     display: flex;
     justify-content: center;
-    align-items: center;
     align-items: stretch;
     width: 3em;
     margin-right: -5px;
@@ -197,7 +196,7 @@ input:focus {
 #searchBox {
     margin-right: -0.5em;
     margin-left: -0.25em;
-    border-radius: 0px;
+    border-radius: 0;
 }
 
 #roast-selection,

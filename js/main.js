@@ -39,7 +39,6 @@
   submitButton.addEventListener("click", updateCoffees);
   let tbody = document.querySelector("#coffees");
   tbody.innerHTML = renderCoffees(coffees);
-
   let searchBox = document.getElementById("searchBox");
   searchBox.addEventListener("keyup", searchCoffees);
 
